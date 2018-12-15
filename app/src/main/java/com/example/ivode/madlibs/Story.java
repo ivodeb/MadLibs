@@ -25,15 +25,15 @@ import java.util.*;
 public class Story implements Serializable {
     private String text;                 // text of the story
     private List<String> placeholders;   // list of placeholders to fill in
-    private int filledIn;                // number of placeholders that have been filled in
+    private int words_done;                // number of placeholders that have been filled in
     private boolean htmlMode;            // set to true to surround placeholders with <b></b> tags
 
     {
         // instance initializer; runs before any constructor
         text = "";
         placeholders = new ArrayList<String>();
-        filledIn = 0;
-        htmlMode = false;
+        words_done = 0;
+        htmlMode = true;
         clear();
     }
 
@@ -46,14 +46,14 @@ public class Story implements Serializable {
     public void clear() {
         text = "";
         placeholders.clear();
-        filledIn = 0;
+        words_done = 0;
     }
 
     /** replaces the next unfilled placeholder with the given word */
     public void fillInPlaceholder(String word) {
         if (!isFilledIn()) {
-            text = text.replace("<" + filledIn + ">", word);
-            filledIn++;
+            text = text.replace("<" + words_done + ">", word);
+            words_done++;
         }
     }
 
@@ -63,7 +63,7 @@ public class Story implements Serializable {
         if (isFilledIn()) {
             return "";
         } else {
-            return placeholders.get(filledIn);
+            return placeholders.get(words_done);
         }
     }
 
@@ -74,12 +74,12 @@ public class Story implements Serializable {
 
     /** returns how many placeholders still need to be filled in */
     public int getPlaceholderRemainingCount() {
-        return placeholders.size() - filledIn;
+        return placeholders.size() - words_done;
     }
 
     /** returns true if all placeholders have been filled in */
     public boolean isFilledIn() {
-        return filledIn >= placeholders.size();
+        return words_done >= placeholders.size();
     }
 
     /** reads initial story text from the given input stream */

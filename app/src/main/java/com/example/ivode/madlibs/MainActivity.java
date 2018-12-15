@@ -1,3 +1,8 @@
+/*
+ *  Mad Libs app by Ivo de Brouwer 11045841
+ *  Extra: Filled-in words bold in the final text
+ */
+
 package com.example.ivode.madlibs;
 
 import android.content.Intent;
@@ -13,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button playButton = findViewById(R.id.buttonPlay);
-        playButton.setOnClickListener(new PlayButtonListener());
+        Button play_button = findViewById(R.id.play_button);
+        play_button.setOnClickListener(new PlayButtonListener());
     }
 
     private class PlayButtonListener implements View.OnClickListener {

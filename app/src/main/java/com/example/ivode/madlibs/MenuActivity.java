@@ -1,3 +1,8 @@
+/*
+ *  Mad Libs app by Ivo de Brouwer 11045841
+ *  Extra: Filled-in words bold in the final text
+ */
+
 package com.example.ivode.madlibs;
 
 import android.content.Intent;
@@ -9,6 +14,8 @@ import android.widget.Button;
 import java.io.InputStream;
 
 public class MenuActivity extends AppCompatActivity {
+
+    // initialize arrays for story variables
 
     private int files[] = {R.raw.madlib0_simple, R.raw.madlib1_tarzan,
                                 R.raw.madlib2_university, R.raw.madlib3_clothes,
@@ -27,7 +34,7 @@ public class MenuActivity extends AppCompatActivity {
 
         for (int i = 0; i < files.length; i++) {
             Button button = findViewById(buttons[i]);
-            button.setText(stories[i]);
+            button.setText(stories[i].substring(8));
             button.setOnClickListener(new OnStoryClickListener());
         }
     }
@@ -46,11 +53,17 @@ public class MenuActivity extends AppCompatActivity {
                 }
             }
 
-            InputStream inputStream = getResources().openRawResource(story_id);
-            Story story = new Story(inputStream);
+            InputStream input_file = getResources().openRawResource(story_id);
+            Story story = new Story(input_file);
             Intent intent = new Intent(MenuActivity.this, WordActivity.class);
             intent.putExtra("story", story);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
