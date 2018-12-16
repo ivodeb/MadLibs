@@ -17,25 +17,26 @@ public class MenuActivity extends AppCompatActivity {
 
     // initialize arrays for story variables
 
-    private int files[] = {R.raw.madlib0_simple, R.raw.madlib1_tarzan,
+    private int menu_buttons[] = {R.id.simple, R.id.tarzan, R.id.university, R.id.clothes,
+            R.id.dance};
+
+    private int raw_files[] = {R.raw.madlib0_simple, R.raw.madlib1_tarzan,
                                 R.raw.madlib2_university, R.raw.madlib3_clothes,
                                 R.raw.madlib4_dance};
 
     private String stories[] = {"madlib0_simple", "madlib1_tarzan", "madlib2_university",
                                 "madlib3_clothes", "madlib4_dance"};
 
-    private int buttons[] = {R.id.simple, R.id.tarzan, R.id.university, R.id.clothes,
-                                R.id.dance};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        for (int i = 0; i < files.length; i++) {
-            Button button = findViewById(buttons[i]);
-            button.setText(stories[i].substring(8));
-            button.setOnClickListener(new OnStoryClickListener());
+        for (int i = 0; i < raw_files.length; i++) {
+            Button menu_button = findViewById(menu_buttons[i]);
+            menu_button.setText(stories[i].substring(8));
+            menu_button.setOnClickListener(new OnStoryClickListener());
         }
     }
 
@@ -47,9 +48,9 @@ public class MenuActivity extends AppCompatActivity {
             int story_id = 0;
             int button_id = view.getId();
 
-            for (int i = 0; i < buttons.length; i++) {
-                if (button_id == buttons[i]) {
-                    story_id = files[i];
+            for (int i = 0; i < menu_buttons.length; i++) {
+                if (button_id == menu_buttons[i]) {
+                    story_id = raw_files[i];
                 }
             }
 
