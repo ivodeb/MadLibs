@@ -5,6 +5,6 @@ Extra features:
 
 ## Screenshots
 
-Title screen               | Story select menu          | Fill in the words          | Your story
-:-------------------------:|:--------------------------:|:--------------------------:|:--------------------------:|
-![](MadLibs1.jpg)          | ![](MadLibs2.jpg)          | ![](MadLibs3.jpg)          | ![](MadLibs4.jpg)
+Title screen                   | Story select menu              | Fill in the words              | Your story
+:-----------------------------:|:------------------------------:|:------------------------------:|:--------------------------:|
+![](doc/MadLibs1.jpg)          | ![](doc/MadLibs2.jpg)          | ![](doc/MadLibs3.jpg)          | ![](/docMadLibs4.jpg)
