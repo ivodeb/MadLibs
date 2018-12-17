@@ -7,4 +7,4 @@ Extra features:
 
 Title screen                   | Story select menu              | Fill in the words              | Your story
 :-----------------------------:|:------------------------------:|:------------------------------:|:--------------------------:|
-![](doc/MadLibs1.jpg)          | ![](doc/MadLibs2.jpg)          | ![](doc/MadLibs3.jpg)          | ![](/docMadLibs4.jpg)
+![](doc/MadLibs1.jpg)          | ![](doc/MadLibs2.jpg)          | ![](doc/MadLibs3.jpg)          | ![](doc/MadLibs4.jpg)
